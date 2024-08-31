@@ -26,7 +26,7 @@
     body {
       font-family: 'Krona One', sans-serif;
     }
-
+    
     .navbar {
       background-color: #131722;
     }
@@ -75,12 +75,15 @@
       border-top-color: #d4af37 !important;
     }
 
+    
+
     @media (max-width: 767px) {
       .navbar {
         background-color: #1c1f24;
       }
     }
-  </style>
+
+   </style>
 </head>
 
 <body id="netBackground" class="text-light" style="background-color: #131722;">
@@ -122,79 +125,27 @@
       $('[data-toggle="tooltip"]').tooltip();
     });
   </script>
-</body>
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
-    {
-    "symbols": [
-        {
-        "proName": "NASDAQ:AAPL",
-        "title": "Apple"
-        },
-        {
-        "proName": "NASDAQ:GOOGL",
-        "title": "Google"
-        },
-        {
-        "proName": "NASDAQ:MSFT",
-        "title": "Microsoft"
-        },
-        {
-        "proName": "NYSE:TSLA",
-        "title": "Tesla"
-        },
-        {
-        "proName": "NASDAQ:AMZN",
-        "title": "Amazon"
-        }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "light",
-    "isTransparent": false,
-    "displayMode": "adaptive",
-    "locale": "en"
-    }
-    </script>
+
+
+
     <style>
         body {
-            
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background-color: #0000000a;
+           
         }
+
         .container {
+          padding-left: 25px;
+          padding-top: 30px;
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
-        .buttons {
-            margin-bottom: 35px;
-        }
-        .buttons button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .buttons button:hover {
-            background-color: #45a049;
-        }
-        .tradingview-widget-container {
-            height: 900px;
-            margin-top: 20px;
-        }
+
         .search-bar {
-            margin-top: 35px;
-            margin-bottom: 35px;
+          margin-top: 30px;
+          margin-bottom: 20px;
         }
+
         .search-bar input {
             padding: 10px;
             width: 300px;
@@ -203,6 +154,7 @@
             border: 1px solid #ccc;
             margin-right: 10px;
         }
+
         .search-bar button {
             padding: 10px 20px;
             background-color: #4CAF50;
@@ -213,70 +165,248 @@
             border: none;
             transition: background-color 0.3s;
         }
+
         .search-bar button:hover {
             background-color: #45a049;
         }
+
+        .dropdown-container {
+            margin-top: 10px;
+        }
+
+        .dropdown-container select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 5px solid #d1cb0e;
+            cursor: pointer;
+        }
+
+        .widget-container {
+            margin-top: 20px;
+        }
+
+        .widget-container .widget {
+            margin-bottom: 50px;
+        }
     </style>
-</div>
-</div>
-<div class="container">
-    <h1>Stock Chart Viewer</h1>
-    <div class="search-bar">
-        <input type="text" id="symbol-input" placeholder="Enter Stock Symbol (e.g., NASDAQ:AAPL)" />
-        <button onclick="searchSymbol()">Search</button>
-    </div>
-    <div class="buttons">
-        <button onclick="loadChart('NASDAQ:AAPL')">Apple (AAPL)</button>
-        <button onclick="loadChart('NASDAQ:GOOGL')">Google (GOOGL)</button>
-        <button onclick="loadChart('NASDAQ:MSFT')">Microsoft (MSFT)</button>
-        <button onclick="loadChart('NYSE:TSLA')">Tesla (TSLA)</button>
-        <button onclick="loadChart('NASDAQ:AMZN')">Amazon (AMZN)</button>
-    </div>
-    <div class="tradingview-widget-container" id="tradingview-widget">
-        <!-- TradingView Widget will be loaded here -->
-    </div>
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script>
-function loadChart(symbol) {
-    new TradingView.widget({
-        "container_id": "tradingview-widget",
-        "width": "100%",
-        "height": "100%",
-        "symbol": symbol,
-        "interval": "D",
-        "timezone": "Etc/UTC",
-        "theme": "light",
-        "style": "1",
-        "locale": "en",
-        "toolbar_bg": "#f1f3f6",
-        "enable_publishing": false,
-        "allow_symbol_change": true,
-        "save_image": false,
-        "studies": [
-            "RSI@tv-basicstudies",
-            "MACD@tv-basicstudies"
-        ],
-        "container": "tradingview-widget",
-        "hide_top_toolbar": false,
-        "hide_side_toolbar": false,
-        "hide_legend": false
-    });
-}
+</head>
 
-function searchSymbol() {
-    var symbol = document.getElementById('symbol-input').value.trim();
-    if (symbol) {
-        loadChart(symbol);
+<body>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"></a></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500 Index"
+        },
+        {
+          "description": "",
+          "proName": "BSE:SENSEX"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:NVDA"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:AAPL"
+        },
+        {
+          "description": "",
+          "proName": "BSE:RELIANCE"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:NFLX"
+        },
+        {
+          "description": "",
+          "proName": "BSE:ADANIPOWER"
+        },
+        {
+          "description": "",
+          "proName": "BSE:HDFCBANK"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:AMZN"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:TSLA"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:META"
+        },
+        {
+          "description": "",
+          "proName": "BSE:ICICIBANK"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:AMD"
+        },
+        {
+          "description": "",
+          "proName": "NASDAQ:INTC"
+        },
+        {
+          "description": "",
+          "proName": "NYSE:MCD"
+        },
+        {
+          "description": "",
+          "proName": "XETR:BMW"
+        }
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": false,
+      "displayMode": "adaptive",
+      "colorTheme": "light",
+      "locale": "en"
     }
-}
+      </script>
+    </div>
+    
+    <div class="container">
+        <h1>Stock Symbol Analysis</h1>
 
-// Load default chart on page load
-document.addEventListener('DOMContentLoaded', function() {
-    loadChart('NASDAQ:AAPL');
-});
-</script>
+        <div class="search-bar">
+            <input type="text" id="symbol-input" placeholder="Enter Stock Symbol" onkeydown="checkEnterKey(event)">
+            <button onclick="loadWidgets()">Show Widgets</button>
+        </div>
+
+        <div class="dropdown-container">
+            <select id="symbol-dropdown" onchange="dropdownChange()">
+              <option value="none" selected disabled >View Popular Stocks</option>
+                <option value="NASDAQ:AAPL">Apple (AAPL)</option>
+                <option value="NASDAQ:GOOGL">Google (GOOGL)</option>
+                <option value="NASDAQ:MSFT">Microsoft (MSFT)</option>
+                <option value="NASDAQ:TSLA">Tesla (TSLA)</option>
+                <option value="NASDAQ:NVDA">Nvidia (NVDA)</option>
+            </select>
+        </div>
+
+        <div class="widget-container" id="widget-container">
+            <!-- The TradingView widgets will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        function loadWidgets(symbol) {
+            if (!symbol) {
+                symbol = document.getElementById('symbol-input').value.trim();
+            }
+
+
+            if (symbol) {
+                // Clear the previous widgets
+                document.getElementById('widget-container').innerHTML = '';
+
+                // Advanced Chart
+                var advancedChartScript = document.createElement('script');
+                advancedChartScript.type = 'text/javascript';
+                advancedChartScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+                advancedChartScript.innerHTML = JSON.stringify({
+                    "symbol": symbol,
+                    "width": "100%",
+                    "height": 610,
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "details": true,
+                    "hide_top_toolbar": false,
+                    "hide_side_toolbar": true,
+                    "save_image": false
+                });
+                document.getElementById('widget-container').appendChild(advancedChartScript);
+                
+
+                // Technical Analysis
+                var technicalAnalysisScript = document.createElement('script');
+                technicalAnalysisScript.type = 'text/javascript';
+                technicalAnalysisScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
+                technicalAnalysisScript.innerHTML = JSON.stringify({
+                    "interval": "1m",
+                    "width": "100%",
+                    "isTransparent": true,
+                    "height": 450,
+                    "symbol": symbol,
+                    "showIntervalTabs": true,
+                    "locale": "en",
+                    "colorTheme": "dark"
+                });
+                document.getElementById('widget-container').appendChild(technicalAnalysisScript);
+
+                // Fundamental Data
+                var fundamentalDataScript = document.createElement('script');
+                fundamentalDataScript.type = 'text/javascript';
+                fundamentalDataScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-financials.js';
+                fundamentalDataScript.innerHTML = JSON.stringify({
+                    "symbol": symbol,
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "height":"500",
+                    "locale": "en"
+                    
+                });
+                document.getElementById('widget-container').appendChild(fundamentalDataScript);
+
+                // Company Profile
+                var companyProfileScript = document.createElement('script');
+                companyProfileScript.type = 'text/javascript';
+                companyProfileScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js';
+                companyProfileScript.innerHTML = JSON.stringify({
+                    "symbol": symbol,
+                    "height":"400",
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "locale": "en"
+                });
+                document.getElementById('widget-container').appendChild(companyProfileScript);
+
+                // Top Stories (if available)
+                var topStoriesScript = document.createElement('script');
+                topStoriesScript.type = 'text/javascript';
+                topStoriesScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-timeline.js';
+                topStoriesScript.innerHTML = JSON.stringify({
+                    "feedMode": "symbol",
+                    "symbol": symbol,
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "displayMode": "regular",
+                    "width": "100%",
+                    "height": "350",
+                    "locale": "en"
+                });
+                document.getElementById('widget-container').appendChild(topStoriesScript);
+            }
+        }
+
+        function dropdownChange() {
+            var symbol = document.getElementById('symbol-dropdown').value;
+            loadWidgets(symbol);
+        }
+
+        function checkEnterKey(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevents the default form submission behavior if inside a form
+                loadWidgets();
+            }
+        }
+    </script>
+
 </body>
-</html>
-
 
 </html>
