@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Cryptocurrencies converter and market tracker">
   <meta name="keywords" content="Crypto, Cryptocurrency, Stock Market, Bitcoin">
-  <meta name="author" content="Krrish , Ruhaan Sharma,Manan Syal,Mohnish Kaplish">
+  <meta name="author" content="Kirill Kuznetsov, Prakriti Rajbhandari, MidzSreenivasan">
   <title>COINCHANGE</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Krona+One|Pacifico&display=swap" rel="stylesheet" />
@@ -80,6 +80,115 @@
         background-color: #1c1f24;
       }
     }
+
+    .tradingview-widget-container {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .tradingview-widget-container iframe {
+      width: 100% !important;
+      height: 600px; 
+    }
+
+    .heading-container {
+      margin: 30px 0; 
+      text-align: center;
+    }
+    .headingtwo-container {
+      margin: 20px 0; 
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .headingtwo-container h1 {
+      color: #fff;
+    }
+
+    .heading-container h1 {
+      color: #fff;
+    }
+
+    .currency-form-container {
+      margin: 50px 0; 
+      text-align: center;
+    }
+
+    .currency-form-container form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1c1f24;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap; 
+    }
+
+    .currency-form-container form .form-group {
+      margin-right: 15px;
+      margin-bottom: 0;
+      flex-basis: auto;
+    }
+
+    .currency-form-container form select,
+    .currency-form-container form input {
+      width: 200px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #d4af37;
+      background-color: #131722;
+      color: #fff;
+    }
+
+    .currency-form-container form .convert-arrow {
+      font-size: 24px;
+      color: #d4af37;
+      margin: 0 15px;
+    }
+
+    .currency-form-container form .btn-convert {
+      background-color: #d4af37;
+      color: #131722;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .currency-form-container form .btn-convert:hover {
+      background-color: #f0b849;
+    }
+
+    .currency-form-container .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .currency-form-container form {
+        flex-direction: column;
+      }
+
+      .currency-form-container form .form-group,
+      .currency-form-container form .convert-arrow,
+      .currency-form-container form .btn-convert {
+        margin-right: 0;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      .currency-form-container form .convert-arrow {
+        margin: 5px 0;
+      }
+
+      .currency-form-container form .btn-convert {
+        margin-top: 20px;
+        padding: 10px 50px;
+      }
+    }
   </style>
 </head>
 
@@ -95,37 +204,132 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="home.html" data-toggle="tooltip" data-placement="bottom" >Home</a>
+          <a class="nav-link" href="home.html" data-toggle="tooltip" data-placement="bottom">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="crypto.html" data-toggle="tooltip" data-placement="bottom" >Crypto Currency</a>
+          <a class="nav-link" href="crypto.html" data-toggle="tooltip" data-placement="bottom">Crypto Currency</a>
         </li>
         <li class="nav-item">
-            <li class="nav-item ">
-                <a class="nav-link" href="contact.html">Forex <span class="sr-only">(current)</span>
-                </a>
-        </li>
-        <a class="nav-link" href="stocks.html" data-toggle="tooltip" data-placement="bottom"> &nbsp;Stocks</a>
+            <a class="nav-link" href="forex.html" data-toggle="tooltip" data-placement="bottom">Forex</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html" data-toggle="tooltip" data-placement="bottom" >About</a>
+          <a class="nav-link" href="stocks.html" data-toggle="tooltip" data-placement="bottom">Stocks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="forex.html" data-toggle="tooltip" data-placement="bottom" >Contact us</a>
+          <a class="nav-link" href="about.html" data-toggle="tooltip" data-placement="bottom">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom">Contact us</a>
         </li>
       </ul>
     </div>
   </nav>
+
   <main>
+    <iframe src="https://fxpricing.com/fx-widget/ticker-tape-widget.php?id=1,2,3,5,14,20&border=show&speed=50&click_target=blank&theme=light&tm-cr=FFFFFF&hr-cr=00000013&by-cr=28A745&sl-cr=DC3545&flags=circle&d_mode=compact-name&column=ask,bid,spread&lang=en&font=Arial, sans-serif" width="100%" height="85" style="border: unset;"></iframe><div id="fx-pricing-widget-copyright"></div><style type="text/css">#fx-pricing-widget-copyright{text-align: center; font-size: 13px; font-family: sans-serif; margin-top: 10px; margin-bottom: 10px; color: #9db2bd;} #fx-pricing-widget-copyright a{text-decoration: unset; color: #bb3534; font-weight: 600;}</style>
+    <div class="heading-container">
+      <h1>Live Forex Cross Rates</h1>
+    </div>
+
+    <div class="currency-form-container">
+      <form id="currency-form">
+        <div class="form-group">
+          <select id="from-currency" required>
+            <option value="" disabled selected>Convert from</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="USD">US Dollar (USD)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="GBP">British Pound (GBP)</option>
+            <option value="CHF">Swiss Franc (CHF)</option>
+            <option value="AUD">Australian Dollar (AUD)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+            <option value="NZD">New Zealand Dollar (NZD)</option>
+            <option value="INR">Indian Rupee (INR)</option>
+          </select>
+        </div>
+
+        <div class="convert-arrow">→</div>
+
+        <div class="form-group">
+          <input type="number" id="amount" placeholder="Enter amount" required />
+        </div>
+
+        <div class="convert-arrow">→</div>
+
+        <div class="form-group">
+          <select id="to-currency" required>
+            <option value="" disabled selected>Convert to</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="USD">US Dollar (USD)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
+            <option value="GBP">British Pound (GBP)</option>
+            <option value="CHF">Swiss Franc (CHF)</option>
+            <option value="AUD">Australian Dollar (AUD)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+            <option value="NZD">New Zealand Dollar (NZD)</option>
+            <option value="INR">Indian Rupee (INR)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-convert">Convert</button>
+      </form>
+
+      <div class="result" id="conversion-result"></div>
+    </div>
+
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"></a>
+      </div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+      {
+      "width": "100%",
+      "height": "600",
+      "currencies": [
+        "EUR",
+        "USD",
+        "JPY",
+        "GBP",
+        "CHF",
+        "AUD",
+        "CAD",
+        "NZD",
+        "INR"
+      ],
+      "isTransparent": false,
+      "colorTheme": "dark",
+      "locale": "en",
+      "backgroundColor": "#000000"
+      }
+      </script>
+    </div>
     
+    <link rel="stylesheet" type="text/css" media="screen" href="https://www.ifcmtz.com/css/widget/ifc_widget.css" /><script type="text/javascript">var lang = 'en';var hname="www.ifcmtz.com";var vi = document.createElement('script');        vi.type = 'text/javascript';vi.async = true;vi.src ='https://www.ifcmtz.com/js/marketoverview_widget.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vi, s);</script><div id="ifc_widgetmarketoverview" class="ifc_widget"></div><div id="ifc_nedmarketoverview" class="ifc_ned"><a href="https://www.ifcmtz.com/en/informers" target="_blank" rel="nofollow"></div>
   </main>
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
 <script src="contactUs.js"></script>
+
+<script>
+  document.getElementById('currency-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    const fromCurrency = document.getElementById('from-currency').value;
+    const toCurrency = document.getElementById('to-currency').value;
+    const amount = document.getElementById('amount').value;
+
+    const conversionRate = 83.84; // Example rate
+    const convertedAmount = amount * conversionRate;
+
+    const resultElement = document.getElementById('conversion-result');
+    resultElement.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+  });
+</script>
 
 </html>
