@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cryptocurrencies converter and market tracker">
-  <meta name="keywords" content="Crypto, Cryptocurrency, Stock Market, Bitcoin">
-  <meta name="author" content="Kirill Kuznetsov, Prakriti Rajbhandari, MidzSreenivasan">
-  <title>COINCHANGE</title>
+  <meta name="description" content="XTrade - Your Ultimate Market Analysis Platform">
+  <meta name="keywords" content="Market Analysis, Stock Prices, Crypto, Forex, Currency Converter, Market News">
+  <meta name="author" content="Your Name">
+  <title>XTrade - Home</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Krona+One|Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Pacifico&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -21,10 +21,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.min.js"></script>
   <script src="https://www.vantajs.com/dist/vanta.net.min.js"></script>
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
-</head>
   <style>
     body {
-      font-family: 'Krona One', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #131722;
+      color: #f4f4f4;
     }
 
     .navbar {
@@ -32,9 +33,9 @@
     }
 
     .navbar-brand {
-      font-family: '', cursive;
+      font-family: 'Pacifico', cursive;
       color: #fff !important;
-      font-size: 24px;
+      font-size: 28px;
     }
 
     .nav-link {
@@ -47,38 +48,103 @@
       color: #d4af37 !important;
     }
 
-    .active-link {
-      border-bottom: 2px solid #d4af37;
-    }
-
-    .dropdown-menu {
+    .intro-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #1c1f24;
-      border: none;
-      border-radius: 0;
+      text-align: center;
     }
 
-    .dropdown-item {
-      color: #f4f4f4;
-      transition: background-color 0.3s ease;
+    .intro-section h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-    .dropdown-item:hover {
-      background-color: #d4af37;
+    .intro-section p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      margin-bottom: 30px;
     }
 
-    .tooltip-inner {
-      background-color: #d4af37;
-      color: #131722;
+    .features-section {
+      padding: 50px 0;
+      background-color: #131722;
     }
 
-    .arrow::before {
-      border-top-color: #d4af37 !important;
+    .feature-box {
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
     }
 
-    @media (max-width: 767px) {
-      .navbar {
-        background-color: #1c1f24;
-      }
+    .feature-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-box i {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+
+    .feature-box h3 {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .feature-box p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+
+    .scroll-section {
+      padding: 50px 0;
+      background-color: #1c1f24;
+    }
+
+    .scroll-section h2 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .scroll-section .row {
+      margin: 0;
+    }
+
+    .scroll-section .col-md-4 {
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .scroll-section .col-md-4:hover {
+      transform: scale(1.05);
+    }
+
+    .scroll-section .col-md-4 i {
+      font-size: 50px;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    .scroll-section .col-md-4 h4 {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .scroll-section .col-md-4 p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+
+    .wow {
+      visibility: hidden;
     }
   </style>
 </head>
@@ -87,40 +153,95 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light peach-gradient lighten-3 py-4 font-weight-bold z-depth-1">
-    <a class="navbar-brand" href="home.html">OK</a>
+    <a class="navbar-brand" href="home.html">XTrade</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a class="nav-link" href="home.html" data-toggle="tooltip" data-placement="bottom" >Home</a>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="crypto.html" data-toggle="tooltip" data-placement="bottom" >Crypto Currency</a>
+          <a class="nav-link" href="crypto.html">Crypto Currency</a>
         </li>
         <li class="nav-item">
-            <li class="nav-item ">
-                <a class="nav-link" href="contact.html">Forex <span class="sr-only">(current)</span>
-                </a>
-        </li>
-        <a class="nav-link" href="stocks.html" data-toggle="tooltip" data-placement="bottom"> &nbsp;Stocks</a>
+          <a class="nav-link" href="forex.html">Forex</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html" data-toggle="tooltip" data-placement="bottom" >About</a>
+          <a class="nav-link" href="stocks.html">Stocks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html" data-toggle="tooltip" data-placement="bottom" >Contact us</a>
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact us</a>
         </li>
       </ul>
     </div>
   </nav>
 
+  <!-- Intro Section -->
+  <section class="intro-section">
+    <div class="container">
+      <h1 class="wow fadeInDown">Welcome to XTrade</h1>
+      <p class="wow fadeInUp" data-wow-delay="0.2s">Your Ultimate Destination for Market Analysis, Live Stock Prices, Cryptocurrency Tracking, Forex Rates, and More.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.3s">
+          <i class="fas fa-chart-line"></i>
+          <h3>Live Stock Prices</h3>
+          <p>Stay updated with real-time stock prices from major markets around the world.</p>
+        </div>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+          <i class="fas fa-coins"></i>
+          <h3>Cryptocurrency Tracking</h3>
+          <p>Track the latest prices and trends in the cryptocurrency market.</p>
+        </div>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.7s">
+          <i class="fas fa-dollar-sign"></i>
+          <h3>Forex Rates</h3>
+          <p>Monitor live Forex rates and perform currency conversions seamlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll Section -->
+  <section class="scroll-section">
+    <div class="container">
+      <h2 class="wow fadeInDown">Explore Our Tools</h2>
+      <div class="row">
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Market Research</h4>
+          <p>Utilize advanced tools to conduct in-depth market research and analysis.</p>
+        </div>
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+          <i class="fas fa-newspaper"></i>
+          <h4>Latest News</h4>
+          <p>Stay informed with the latest news and updates from the financial world.</p>
+        </div>
+        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.6s">
+          <i class="fas fa-calculator"></i>
+          <h4>Currency Converter</h4>
+          <p>Easily convert currencies using our intuitive and user-friendly converter tool.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Optional Scripts -->
   <script>
     $(document).ready(function () {
       $('[data-toggle="tooltip"]').tooltip();
+      new WOW().init();
     });
   </script>
 </body>
